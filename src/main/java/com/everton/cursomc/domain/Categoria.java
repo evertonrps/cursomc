@@ -1,4 +1,4 @@
-package com.everton.cursomc.cursomc.domain;
+package com.everton.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package com.everton.cursomc.cursomc.repositories;
+package com.everton.cursomc.repositories;
 
-import com.everton.cursomc.cursomc.domain.Categoria;
+import com.everton.cursomc.domain.Categoria;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.everton.cursomc.cursomc.domain;
+package com.everton.cursomc.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Produto implements Serializable {
 
@@ -23,6 +26,7 @@ public class Produto implements Serializable {
     private String nome;
     private Double preco;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "PRODUTO_CATEGORIA",
     joinColumns = @JoinColumn(name = "produto_id"),

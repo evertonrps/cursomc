@@ -1,11 +1,11 @@
-package com.everton.cursomc.cursomc;
+package com.everton.cursomc;
 
 import java.util.Arrays;
 
-import com.everton.cursomc.cursomc.domain.Categoria;
-import com.everton.cursomc.cursomc.domain.Produto;
-import com.everton.cursomc.cursomc.repositories.CategoriaRepository;
-import com.everton.cursomc.cursomc.repositories.ProdutoRepository;
+import com.everton.cursomc.domain.Categoria;
+import com.everton.cursomc.domain.Produto;
+import com.everton.cursomc.repositories.CategoriaRepository;
+import com.everton.cursomc.repositories.ProdutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
