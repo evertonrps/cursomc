@@ -8,6 +8,7 @@ import com.everton.cursomc.domain.Cidade;
 import com.everton.cursomc.domain.Cliente;
 import com.everton.cursomc.domain.Endereco;
 import com.everton.cursomc.domain.Estado;
+import com.everton.cursomc.domain.ItemPedido;
 import com.everton.cursomc.domain.Pagamento;
 import com.everton.cursomc.domain.PagamentoComBoleto;
 import com.everton.cursomc.domain.PagamentoComCartao;
@@ -20,6 +21,7 @@ import com.everton.cursomc.repositories.CidadeRepository;
 import com.everton.cursomc.repositories.ClienteRepository;
 import com.everton.cursomc.repositories.EnderecoRepository;
 import com.everton.cursomc.repositories.EstadoRepository;
+import com.everton.cursomc.repositories.ItemPedidoRepository;
 import com.everton.cursomc.repositories.PagamentoRepository;
 import com.everton.cursomc.repositories.PedidoRepository;
 import com.everton.cursomc.repositories.ProdutoRepository;
@@ -48,6 +50,8 @@ public class DemoApplication implements CommandLineRunner{
 	private PedidoRepository pedidoRepository;
 	@Autowired
 	private PagamentoRepository pagamentoRepository;
+	@Autowired
+	private ItemPedidoRepository itempePedidoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -111,6 +115,19 @@ public class DemoApplication implements CommandLineRunner{
 
 		pedidoRepository.saveAll(Arrays.asList(ped1, ped2));
 		pagamentoRepository.saveAll(Arrays.asList(pagto1, pagto2));
+
+		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
+		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
+		ItemPedido ip3 = new ItemPedido(ped2, p2, 100.00, 1, 800.00);
+
+		ped1.getItens().addAll(Arrays.asList(ip1, ip2));
+		ped2.getItens().addAll(Arrays.asList(ip3));
+
+		p1.getItens().addAll(Arrays.asList(ip1));
+		p2.getItens().addAll(Arrays.asList(ip3));
+		p3.getItens().addAll(Arrays.asList(ip2));
+
+		itempePedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 	}
 
 }
