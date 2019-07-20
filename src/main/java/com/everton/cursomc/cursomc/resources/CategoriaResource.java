@@ -1,8 +1,5 @@
 package com.everton.cursomc.cursomc.resources;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.everton.cursomc.cursomc.domain.Categoria;
 import com.everton.cursomc.cursomc.services.CategoriaService;
 
