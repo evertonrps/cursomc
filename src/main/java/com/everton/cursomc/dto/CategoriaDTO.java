@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 import com.everton.cursomc.domain.Categoria;
 
-/**
- * CategoriaDTO
- */
 public class CategoriaDTO  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
