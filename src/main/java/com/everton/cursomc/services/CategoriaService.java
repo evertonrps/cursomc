@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.everton.cursomc.domain.Categoria;
+import com.everton.cursomc.dto.CategoriaDTO;
 import com.everton.cursomc.repositories.CategoriaRepository;
 import com.everton.cursomc.services.exceptions.DataIntegrityException;
 import com.everton.cursomc.services.exceptions.ObjectNotFoundException;
@@ -54,5 +55,9 @@ public class CategoriaService {
 	{
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
+	}
+
+	public Categoria fromDTO(CategoriaDTO objDto) {
+		return new Categoria(objDto.getId(),objDto.getNome());
 	}
 }
