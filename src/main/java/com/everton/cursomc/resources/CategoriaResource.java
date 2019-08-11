@@ -1,6 +1,5 @@
 package com.everton.cursomc.resources;
 
-import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
